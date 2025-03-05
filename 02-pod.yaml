@@ -1,9 +1,10 @@
-kind: pod
-apiVersion: V1
+kind: Pod
+apiVersion: v1
 metadata:
   name: nginx
+  namespace: expense
 spec:
-# one pod can contain multiple containers
+  # one pod can contain multiple containers
   containers:
-  - name: nginx  # we can give any name we want 
-    image: nginx  
+  - name: nginx
+    image: nginx
