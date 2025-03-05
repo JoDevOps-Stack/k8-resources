@@ -1,13 +1,26 @@
-Kind: Pod
+# Kind: Pod
+# apiVersion: v1
+# metadata:
+#   name: lables
+#   lables:
+#     project: jyo
+#     componenet: nivi
+#     environment: dev
+# spec:
+#   containers:
+#   - name: nginx
+#     image: nginx
+
+
 apiVersion: v1
+kind: Pod  # or another correct kind
 metadata:
   name: lables
-  lables:
-    project: jyo
-    componenet: nivi
+  labels:
+    project: jo
+    component: nivi
     environment: dev
 spec:
   containers:
-  - name: nginx
-    image: nginx
-
+    - name: my-contair
+      image: nginx
