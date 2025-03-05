@@ -15,6 +15,7 @@
 apiVersion: v1
 kind: Pod  # or another correct kind
 metadata:
+
   name: lables
   labels:
     project: jo
