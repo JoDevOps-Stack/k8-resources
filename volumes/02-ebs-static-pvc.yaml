@@ -17,6 +17,8 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: ebs-static
+  labels:
+    purpose: "ebs-static-demo"
 spec:
   nodeSelector:
     topology.kubernetes.io/zone: us-east-1c
@@ -31,3 +33,19 @@ spec:
     persistentVolumeClaim:
       claimName: ebs-static # claim/asking the volume to pvc
       # the mount volume name and claim volume name should be same as "persistent-storage"
+
+---
+#to test the data when it will be
+kind: Service
+apiVersion: v1
+metadata:
+  name: nginx-lb
+spec:
+  type: LoadBalancer
+  selector: # labels are used as selectors
+    purpose: "ebs-static-demo"
+  ports:
+  - protocol: TCP
+    port: 80 # service port
+    targetPort: 80
+    nodePort: 30007
