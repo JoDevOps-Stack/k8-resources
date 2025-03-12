@@ -35,7 +35,7 @@ spec:
       # the mount volume name and claim volume name should be same as "persistent-storage"
 
 ---
-#to test the data when it will be 
+# to test the data when it will be 
 kind: Service
 apiVersion: v1
 metadata:
