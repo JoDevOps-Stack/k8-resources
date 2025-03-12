@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: ebs-static
+  name: ebs-static # asking volume from pvc to pv i.e why gave pv metadata name here
 spec:
   storageClassName: "" # Empty string must be explicitly set otherwise default StorageClass will be set
   volumeName: ebs-static
@@ -16,7 +16,7 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: ebs-static
+  name: ebs-static 
   labels:
     purpose: "ebs-static-demo"
 spec:
@@ -35,7 +35,7 @@ spec:
       # the mount volume name and claim volume name should be same as "persistent-storage"
 
 ---
-#to test the data when it will be
+#to test the data when it will be 
 kind: Service
 apiVersion: v1
 metadata:
